@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/collegeapp.iml" filepath="$PROJECT_DIR$/collegeapp.iml" />
+      <module fileurl="file://C:\Users\rcarpenter\Downloads\1_1_6OkMagpieApp\1.1.6.POkMagpie\collegeappAK2-2-2\collegeapp.iml" filepath="C:\Users\rcarpenter\Downloads\1_1_6OkMagpieApp\1.1.6.POkMagpie\collegeappAK2-2-2\collegeapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/collegeappAK2-2-2.iml" filepath="$PROJECT_DIR$/collegeappAK2-2-2.iml" />
     </modules>
   </component>
 </project>

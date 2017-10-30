@@ -79,38 +79,40 @@ public class ProfileFragment extends Fragment {
                 if ((first != null && !first.equals("")) && (last != null && !last.equals(""))) {
                     mFirstNameText.setText(first);
                     mLastNameText.setText(last);
-                }
-                String whereClause = "email = '" +email+"'";
-                DataQueryBuilder queryBuilder = DataQueryBuilder.create();
-                queryBuilder.setWhereClause(whereClause);
-                Backendless.Data.of(Profile.class).find(queryBuilder, new AsyncCallback<List<Profile>>() {
-                    @Override
-                    public void handleResponse(List<Profile> response) {
-                        if(!response.isEmpty()){
-                            String profileId = response.get(0).getObjectId();
-                            mProfile.setObjectId(profileId);
-                            Log.i("ProfileFragment", profileId);
+                    mProfile.setFirstName(first);
+                    mProfile.setLastName(last);
+
+                    String whereClause = "email = '" + email + "'";
+                    DataQueryBuilder queryBuilder = DataQueryBuilder.create();
+                    queryBuilder.setWhereClause(whereClause);
+                    Backendless.Data.of(Profile.class).find(queryBuilder, new AsyncCallback<List<Profile>>() {
+                        @Override
+                        public void handleResponse(List<Profile> response) {
+                            if (!response.isEmpty()) {
+                                String profileId = response.get(0).getObjectId();
+                                mProfile.setObjectId(profileId);
+                                Log.i("ProfileFragment", profileId);
+                            }
+                            Backendless.Data.of(Profile.class).save(mProfile, new AsyncCallback<Profile>() {
+                                @Override
+                                public void handleResponse(Profile response) {
+                                    Log.i("ProfileFragment saved", response.toString());
+                                }
+
+                                @Override
+                                public void handleFault(BackendlessFault fault) {
+                                    Log.i("ProfileFragment failed", fault.getMessage());
+                                }
+                            });
                         }
-                        Backendless.Data.of(Profile.class).save(mProfile, new AsyncCallback<Profile>() {
-                            @Override
-                            public void handleResponse(Profile response) {
-                                Log.i("ProfileFragment saved", response.toString());
-                            }
 
-                            @Override
-                            public void handleFault(BackendlessFault fault) {
-                                Log.i("ProfileFragment failed", fault.getMessage());
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void handleFault(BackendlessFault fault) {
-                        Log.i("ProfileFragment", fault.getMessage());
-                    }
-                });
+                        @Override
+                        public void handleFault(BackendlessFault fault) {
+                            Log.i("ProfileFragment", fault.getMessage());
+                        }
+                    });
+                }
             }
-
         });
         return rootView;
     }

@@ -6,7 +6,7 @@ import java.util.Date;
  * Created by cspeir on 10/6/2017.
  */
 
-public class Profile {
+public class Profile extends ApplicantData{
     private String lastName;
     private String firstName;
     private Date mDates;

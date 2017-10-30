@@ -23,9 +23,10 @@ import com.backendless.exceptions.BackendlessFault;
 public class ApplicantActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     public static final String EMAIL_PREF = "EMAIL_PREF";
-    private final String APP_ID = "5CF13F91-F699-0312-FFC2-24634322F900";
-    private final String API_KEY = "207B5D3D-35DE-75B9-FF65-DE258F880300";
-    private final String MY_EMAIL_ADRESS= "cospe18@hotmail.com";
+    private final String APP_ID = "9A997118-27BC-3FC2-FF03-F46BBE0B9E00";
+    private final String API_KEY = "F011569C-6DD3-22BD-FF9E-2E46AD56A100";
+    private final String MY_EMAIL_ADRESS= "randbgaming7@gmail.com";
+
     Fragment contentFragment = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

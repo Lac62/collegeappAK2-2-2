@@ -8,4 +8,7 @@ public class Sibling  extends FamilyMember {
     public Sibling(String first, String last){
         super(first, last);
     }
+    public String toString(){
+        return "Guarduan: " + getFirstName() + getLastName();
+    }
 }
